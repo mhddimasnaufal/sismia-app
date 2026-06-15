@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ==================== ANIMASI UNTUK IDUL ADHA 1447 H ==================== */
+
+/* Animasi bintang berkedip */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+/* Animasi partikel emas mengambang */
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  25% { transform: translateY(-25px) translateX(12px) rotate(5deg); }
+  50% { transform: translateY(-12px) translateX(-12px) rotate(-3deg); }
+  75% { transform: translateY(-35px) translateX(8px) rotate(8deg); }
+}
+
+/* Animasi pulse untuk logo */
+@keyframes pulseGold {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+  }
+}
+
+/* Animasi fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi fade in down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi banner glow */
+@keyframes bannerGlow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    background-position: 0% 50%;
+  }
+  50% { 
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    background-position: 100% 50%;
+  }
+}
+
+/* Animasi shine pada card */
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animasi untuk domba/ketupat */
+@keyframes gentleBounce {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* ==================== CLASS UNTUK ANIMASI ==================== */
+
+.animate-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-banner {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 2s infinite;
+}
+
+.animate-gentle {
+  animation: gentleBounce 3s ease-in-out infinite;
+}
+
+/* ==================== WARNA TEMA IDUL ADHA ==================== */
+
+.text-dark-green {
+  color: #064e1f !important;
+}
+
+.bg-dark-green {
+  background-color: #064e1f !important;
+}
+
+.text-gold {
+  color: #ffd700 !important;
+}
+
+.bg-gold {
+  background-color: #ffd700 !important;
+}
+
+.text-gold-dark {
+  color: #d4a000 !important;
+}
+
+.bg-gold-dark {
+  background-color: #d4a000 !important;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb800 30%, #ffea00 70%, #ffd700 100%);
+  background-size: 200% 200%;
+  animation: bannerGlow 3s ease infinite;
+}
+
+.bg-gradient-green {
+  background: linear-gradient(135deg, #0a5c2e 0%, #064e1f 50%, #0a5c2e 100%);
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, #0a2e1a 0%, #052010 100%);
+}
+
+/* Shadow */
+.shadow-gold {
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== CUSTOM BUTTON STYLES ==================== */
+
+.btn-primary {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #1B5E20;
+  border-color: #1B5E20;
+}
+.btn-outline-primary {
+  color: #2E7D32;
+  border-color: #2E7D32;
+}
+.btn-outline-primary:hover {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+}
+
+/* Button Login khusus Idul Adha */
+.btn-login {
+  background: linear-gradient(135deg, #0a5c2e 0%, #064e1f 100%);
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-login:hover {
+  background: linear-gradient(135deg, #0c6e35 0%, #086025 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-login:active {
+  transform: translateY(0);
+}
+.btn-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+.btn-login:hover::before {
+  left: 100%;
+}
+
+/* Gold Button untuk Idul Adha */
+.btn-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb800 100%);
+  border: none;
+  color: #064e1f;
+  font-weight: bold;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #ffb800 0%, #ffa000 100%);
+  transform: translateY(-2px);
+  color: #064e1f;
+}
+
+/* ==================== CARD STYLES ==================== */
+
+.card {
+  border-radius: 20px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* Glassmorphism Card */
+.card-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* ==================== INPUT FIELD STYLES ==================== */
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+.form-control, .form-select {
+  transition: all 0.3s ease;
+}
+
+/* ==================== TABLE STYLES ==================== */
+
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #2d3748;
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+/* ==================== BADGE STYLES ==================== */
+
+.badge-success {
+  background-color: #28a745;
+  color: white;
+}
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+}
+.badge-info {
+  background-color: #17a2b8;
+  color: white;
+}
+.badge-gold {
+  background: linear-gradient(135deg, #ffd700, #ffb800);
+  color: #064e1f;
+  font-weight: 600;
+}
+
+/* ==================== MODAL ANIMATION ==================== */
+
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+}
+.modal.show .modal-dialog {
+  transform: none;
+}
+
+/* ==================== LOADING SPINNER ==================== */
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ==================== SCROLLBAR ==================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a2e1a;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffd700, #ffb800);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffb800, #ffa000);
+}
+
+/* ==================== RESPONSIVE UTILITIES ==================== */
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    z-index: 1050;
+    transition: left 0.3s ease;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+  }
+  
+  /* Mobile parallax elements opacity dikurangi */
+  .parallax-element {
+    opacity: 0.08 !important;
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.z-index-5 {
+  z-index: 5;
+}
+
+.z-index-10 {
+  z-index: 10;
+}
+
+.z-index-15 {
+  z-index: 15;
+}
+
+.z-index-20 {
+  z-index: 20;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Font Arabic style untuk teks islami */
+.font-arabic {
+  font-family: 'Amiri', 'Poppins', serif;
+}
+
+/* Efek teks gradien emas */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffd700, #ffb800, #ffea00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
